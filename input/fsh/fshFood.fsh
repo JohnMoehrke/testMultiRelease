@@ -34,28 +34,29 @@ Usage: #example
 * address.state = "WI"
 * address.country = "USA"
 
-/*
+/* Errors happen if this is uncommented */
 Profile: LesserProvideBundle
 Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
 Id: testMultiRelease.lesserProfileBundle
 Title: "Lesser than MHD Minimal.ProvideBundle"
-Description: "Take away the SubmissionSet"
-* entry[Patient] ^short = "don't"
-*/
+Description: "Take away the Binary Document and FHIR document"
+* entry[Documents] 0..0
+* entry[FhirDocuments] 0..0
+/* */
 
-/*
+/* */
 Profile: LesserDocumentReference
 Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
 Id: testMultiRelease.LesserDocumentReference
 Title: "Lesser than MHD Minimal Document Reference"
 Description: "Take away identifier"
-* identifier 0..0
-*/
+* identifier[entryUUID] 0..0
+/* */
 
 
 Instance:   ex-DocumentReferenceMinimalLesser
-//InstanceOf: testMultiRelease.LesserDocumentReference
-InstanceOf: IHE.MHD.Minimal.DocumentReference
+InstanceOf: testMultiRelease.LesserDocumentReference
+//InstanceOf: IHE.MHD.Minimal.DocumentReference
 Title:      "DocumentReference for Minimal metadata with an encounter"
 Description: "Example of a minimal DocumentReference resource. This has minimal metadata plus an encounter and custodian."
 Usage: #example
@@ -75,18 +76,18 @@ Usage: #example
 
 
 
-
+/* 
 Profile: LesserBasicConsent
 Parent: https://profiles.ihe.net/ITI/PCF/StructureDefinition/IHE.PCF.consentBasic
 Id: testMultiRelease.lesserBasicConsent
 Title: "Lesser than PCF Basic Consent"
 Description: "Take away identifier"
 * identifier 0..0
-
+*/
 
 Instance: ex-consent-basic-treat
-//InstanceOf: BasicConsent
-InstanceOf: LesserBasicConsent
+InstanceOf: BasicConsent
+//InstanceOf: LesserBasicConsent
 Title: "Consent for purpose of treatment example"
 Description: """
 Consent for purposes of use involved in treatment: Treatment/Payment/Operations
