@@ -1,0 +1,79 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: johnmoehrke.testmultirelease.example
+canonical: http://johnmoehrke.github.io/testmultirelease
+name: JohnMoehrketestmultirelease
+status: draft
+version: 0.1.0
+#fhirVersion: 4.0.1
+fhirVersion: 4.3.0
+copyrightYear: 2021+
+releaseLabel: ci-build
+publisher:
+  name: John Moehrke (himself)
+  url: http://healthcaresecprivacy.blogspot.com
+  email: JohnMoehrke@gmail.com
+license: CC-BY-SA-4.0
+jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
+
+dependencies:
+  ihe.formatcode.fhir:
+    id: iheformatcodefhir
+    uri: https://profiles.ihe.net/fhir/ihe.formatcode.fhir/ImplementationGuide/ihe.formatcode.fhir
+    version: 1.1.x
+  ihe.iti.balp:
+    id: iheitibasicaudit
+    uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
+    version: 1.1.x
+  ihe.iti.mhd: 
+    id: iheitimhd
+    uri: https://profiles.ihe.net/ITI/MHD/ImplementationGuide/ihe.iti.mhd
+    version: 4.2.1
+  ihe.iti.svcm:
+    id: iheitisvcm
+    uri: https://profiles.ihe.net/ITI/SVCM/ImplementationGuide/ihe.iti.svcm
+    version: 1.5.1
+  ihe.iti.mcsd:
+    id: iheitimcsd
+    uri: https://profiles.ihe.net/ITI/mCSD/ImplementationGuide/ihe.iti.mcsd
+    version: 3.8.x
+  ihe.iti.pdqm: 
+    id: ihepdqm
+    uri: https://profiles.ihe.net/ITI/PDQm/ImplementationGuide/ihe.iti.pdqm
+    version: 2.4.x
+  ihe.iti.pixm:
+    id: iheitipixm
+    uri: https://profiles.ihe.net/ITI/PIXm/ImplementationGuide/ihe.iti.pixm
+    version: 3.0.3
+  ihe.iti.pmir:
+    id: iheitipmir
+    uri: https://profiles.ihe.net/ITI/PMIR/ImplementationGuide/ihe.iti.pmir
+    version: 1.5.x
+  ihe.iti.pcf:
+    version: 1.0.0
+
+
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  path-resource:
+    - fsh-generated/resources
+#  path-pages:
+#    - input/pagecontent
+#    - fsh-generated/includes
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'false'
+  logging: progress
+  shownav: 'true'
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
