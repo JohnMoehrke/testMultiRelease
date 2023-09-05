@@ -1,6 +1,6 @@
 # Status
 
-
+will work with same FHIR versions, but will throw errors if you try to profile across R4 versions.
 
 # testmultirelease
 
