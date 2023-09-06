@@ -34,7 +34,7 @@ Usage: #example
 * address.state = "WI"
 * address.country = "USA"
 
-/* Errors happen if this is uncommented */
+/* Errors happen if this is uncommented with an R4B build and PCF included */
 Profile: LesserProvideBundle
 Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.ProvideBundle
 Id: testMultiRelease.lesserProfileBundle
@@ -42,21 +42,22 @@ Title: "Lesser than MHD Minimal.ProvideBundle"
 Description: "Take away the Binary Document and FHIR document"
 * entry[Documents] 0..0
 * entry[FhirDocuments] 0..0
-/* */
 
-/* */
+
+ 
 Profile: LesserDocumentReference
 Parent: https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference
 Id: testMultiRelease.LesserDocumentReference
 Title: "Lesser than MHD Minimal Document Reference"
 Description: "Take away identifier"
 * identifier[entryUUID] 0..0
-/* */
+
 
 
 Instance:   ex-DocumentReferenceMinimalLesser
 InstanceOf: testMultiRelease.LesserDocumentReference
 //InstanceOf: IHE.MHD.Minimal.DocumentReference
+//InstanceOf: DocumentReference
 Title:      "DocumentReference for Minimal metadata with an encounter"
 Description: "Example of a minimal DocumentReference resource. This has minimal metadata plus an encounter and custodian."
 Usage: #example
@@ -76,7 +77,8 @@ Usage: #example
 
 
 
-/* 
+/* Errors happen if this is uncommented with an R4B build and MHD profiling included */
+/*
 Profile: LesserBasicConsent
 Parent: https://profiles.ihe.net/ITI/PCF/StructureDefinition/IHE.PCF.consentBasic
 Id: testMultiRelease.lesserBasicConsent
@@ -86,7 +88,8 @@ Description: "Take away identifier"
 */
 
 Instance: ex-consent-basic-treat
-InstanceOf: BasicConsent
+InstanceOf: Consent
+//InstanceOf: BasicConsent
 //InstanceOf: LesserBasicConsent
 Title: "Consent for purpose of treatment example"
 Description: """
@@ -153,6 +156,5 @@ Usage: #example
 * content.attachment.contentType = #text/plain
 * content.attachment.data = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdCwgc2VkIGRvIGVpdXNtb2QgdGVtcG9yIGluY2lkaWR1bnQgdXQgbGFib3JlIGV0IGRvbG9yZSBtYWduYSBhbGlxdWEuIFV0IGVuaW0gYWQgbWluaW0gdmVuaWFtLCBxdWlzIG5vc3RydWQgZXhlcmNpdGF0aW9uIHVsbGFtY28gbGFib3JpcyBuaXNpIHV0IGFsaXF1aXAgZXggZWEgY29tbW9kbyBjb25zZXF1YXQuIER1aXMgYXV0ZSBpcnVyZSBkb2xvciBpbiByZXByZWhlbmRlcml0IGluIHZvbHVwdGF0ZSB2ZWxpdCBlc3NlIGNpbGx1bSBkb2xvcmUgZXUgZnVnaWF0IG51bGxhIHBhcmlhdHVyLiBFeGNlcHRldXIgc2ludCBvY2NhZWNhdCBjdXBpZGF0YXQgbm9uIHByb2lkZW50LCBzdW50IGluIGN1bHBhIHF1aSBvZmZpY2lhIGRlc2VydW50IG1vbGxpdCBhbmltIGlkIGVzdCBsYWJvcnVtLg=="
 // Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
 
 

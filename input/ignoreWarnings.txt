@@ -1,5 +1,7 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
-# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+# new IG publisher gives warnings about draft valuesets
+INFORMATION: DocumentReference/ex-DocumentReferenceMinimalLesser: DocumentReference.status: Reference to draft item http://hl7.org/fhir/document-reference-status|4.0.1
+
+# no need for an example
+WARNING: StructureDefinition.where(url = 'http://johnmoehrke.github.io/testmultirelease/StructureDefinition/testMultiRelease.lesserProfileBundle'): The Implementation Guide contains no examples for this profile
